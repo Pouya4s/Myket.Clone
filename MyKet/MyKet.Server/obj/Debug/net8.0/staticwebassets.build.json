@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "Sg2sxAIhqQNc6JCa5mV75ADOEEQXcuuHL/UOK4E+STQ=",
+  "Source": "MyKet.Server",
+  "BasePath": "_content/MyKet.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

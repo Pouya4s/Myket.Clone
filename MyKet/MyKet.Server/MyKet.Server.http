@@ -1,0 +1,6 @@
+@MyKet.Server_HostAddress = http://localhost:5204
+
+GET {{MyKet.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
