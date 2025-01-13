@@ -5,6 +5,9 @@
 /FrontEnd/.pnp
 /FrontEnd/.pnp.js
 /MyKet/**/bin
+/MyKet/.vs
+/MyKet/MyKet.Data/obj
+/MyKet/MyKet.Server/obj
 # testing
 /FrontEnd/coverage
 
