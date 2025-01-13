@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "E:\\Mine\\Project\\Back End\\Myket.Clone\\MyKet\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{69CF0AE4-C327-4155-A57C-2C23235DBD64}|MyKet.Server\\MyKet.Server.csproj|e:\\mine\\project\\back end\\myket.clone\\myket\\myket.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69CF0AE4-C327-4155-A57C-2C23235DBD64}|MyKet.Server\\MyKet.Server.csproj|solutionrelative:myket.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{69CF0AE4-C327-4155-A57C-2C23235DBD64}|MyKet.Server\\MyKet.Server.csproj|e:\\mine\\project\\back end\\myket.clone\\myket\\myket.server\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{69CF0AE4-C327-4155-A57C-2C23235DBD64}|MyKet.Server\\MyKet.Server.csproj|solutionrelative:myket.server\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -31,19 +35,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Mine\\Project\\Back End\\Myket.Clone\\MyKet\\MyKet.Server\\Program.cs",
+              "RelativeDocumentMoniker": "MyKet.Server\\Program.cs",
+              "ToolTip": "E:\\Mine\\Project\\Back End\\Myket.Clone\\MyKet\\MyKet.Server\\Program.cs",
+              "RelativeToolTip": "MyKet.Server\\Program.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAADIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T18:46:01.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "CategoriesController.cs",
               "DocumentMoniker": "E:\\Mine\\Project\\Back End\\Myket.Clone\\MyKet\\MyKet.Server\\Controllers\\CategoriesController.cs",
               "RelativeDocumentMoniker": "MyKet.Server\\Controllers\\CategoriesController.cs",
               "ToolTip": "E:\\Mine\\Project\\Back End\\Myket.Clone\\MyKet\\MyKet.Server\\Controllers\\CategoriesController.cs",
               "RelativeToolTip": "MyKet.Server\\Controllers\\CategoriesController.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAQwBsAAABAAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAAAQwBwAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-13T18:15:50.345Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AppsController.cs",
               "DocumentMoniker": "E:\\Mine\\Project\\Back End\\Myket.Clone\\MyKet\\MyKet.Server\\Controllers\\AppsController.cs",
               "RelativeDocumentMoniker": "MyKet.Server\\Controllers\\AppsController.cs",

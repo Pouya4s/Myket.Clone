@@ -38,7 +38,7 @@ namespace MyKet.Server
                 });
 
             });
-            #endregion
+        #endregion
             
             var app = builder.Build();
 
@@ -49,6 +49,7 @@ namespace MyKet.Server
                 app.UseSwaggerUI();
             }
 
+            app.UseCors("All");
             app.UseHttpsRedirection();
 
             app.UseAuthorization();

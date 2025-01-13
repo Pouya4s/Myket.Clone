@@ -1,7 +1,7 @@
 import './App.css';
 // import { getJson, postJson, deleteJson } from './fetch';
 import Main from './components/Main/Main';
-import {HashRouter as Router,Routes,Route} from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainLayout from './MainLayout';
 import Layout from './Layout';
 import Games from './components/Games/Main';
@@ -13,7 +13,7 @@ import Developers from './components/Developers/Main';
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
             <Route element={<MainLayout/>}>
               <Route index path='/' element={<Main/>}/>
@@ -23,15 +23,15 @@ function App() {
             <Route element={<Layout/>}>
                 <Route path='/Games' element={<Games/>}/>
                 
-                <Route path='/Apps' element={<Apps/>}>
-                  <Route path='/Apps/Details' element={<Details/>}/>
-                </Route>
+                <Route path='/Apps' element={<Apps/>}/>
+                <Route path='/Apps/Details' element={<Details/>}/>
+                
                 
                 <Route path='/Movies' element={<Movies/>}/>
                 <Route path='/Developers' element={<Developers/>}/>
             </Route>
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 
