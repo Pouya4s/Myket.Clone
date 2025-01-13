@@ -1,4 +1,4 @@
-let siteAddress = "https://localhost:7201/";
+let siteAddress = "https://localhost:7075/";
 
 async function getJSON(address)
 {
