@@ -15,16 +15,21 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route element={<MainLayout/>}>
-          <Route path='/' element={<Main/>}/>
-        </Route>
-        <Route element={<Layout/>}>
-          <Route path='/Games' element={<Games/>}/>
-          <Route path='/Apps' element={<Apps/>}/>
-          <Route path='/Movies' element={<Movies/>}/>
-          <Route path='/Developers' element={<Developers/>}/>
-          <Route path='/Details' element={<Details/>}/>
-        </Route>
+            <Route element={<MainLayout/>}>
+              <Route index path='/' element={<Main/>}/>
+              <Route index path='/home' element={<Main/>}/>
+            </Route>
+            
+            <Route element={<Layout/>}>
+                <Route path='/Games' element={<Games/>}/>
+                
+                <Route path='/Apps' element={<Apps/>}>
+                  <Route path='/Apps/Details' element={<Details/>}/>
+                </Route>
+                
+                <Route path='/Movies' element={<Movies/>}/>
+                <Route path='/Developers' element={<Developers/>}/>
+            </Route>
       </Routes>
     </Router>
   );

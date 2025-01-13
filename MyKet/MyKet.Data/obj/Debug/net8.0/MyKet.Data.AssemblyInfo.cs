@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MyKet.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e44f3c6d976a125ee59b065e67d28eaba563d59e")]
 [assembly: System.Reflection.AssemblyProductAttribute("MyKet.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MyKet.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

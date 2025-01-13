@@ -4011,11 +4011,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Mine\\Project\\Back End\\MyKet\\MyKet.Data\\MyKet.Data.csproj",
+      "projectUniqueName": "E:\\Mine\\Project\\Back End\\Myket.Clone\\MyKet\\MyKet.Data\\MyKet.Data.csproj",
       "projectName": "MyKet.Data",
-      "projectPath": "E:\\Mine\\Project\\Back End\\MyKet\\MyKet.Data\\MyKet.Data.csproj",
+      "projectPath": "E:\\Mine\\Project\\Back End\\Myket.Clone\\MyKet\\MyKet.Data\\MyKet.Data.csproj",
       "packagesPath": "C:\\Users\\yaran\\.nuget\\packages\\",
-      "outputPath": "E:\\Mine\\Project\\Back End\\MyKet\\MyKet.Data\\obj\\",
+      "outputPath": "E:\\Mine\\Project\\Back End\\Myket.Clone\\MyKet\\MyKet.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\yaran\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Mine\\Project\\Back End\\MyKet\\MyKet.Server\\MyKet.Server.csproj": {}
+    "E:\\Mine\\Project\\Back End\\Myket.Clone\\MyKet\\MyKet.Server\\MyKet.Server.csproj": {}
   },
   "projects": {
-    "E:\\Mine\\Project\\Back End\\MyKet\\MyKet.Data\\MyKet.Data.csproj": {
+    "E:\\Mine\\Project\\Back End\\Myket.Clone\\MyKet\\MyKet.Data\\MyKet.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Mine\\Project\\Back End\\MyKet\\MyKet.Data\\MyKet.Data.csproj",
+        "projectUniqueName": "E:\\Mine\\Project\\Back End\\Myket.Clone\\MyKet\\MyKet.Data\\MyKet.Data.csproj",
         "projectName": "MyKet.Data",
-        "projectPath": "E:\\Mine\\Project\\Back End\\MyKet\\MyKet.Data\\MyKet.Data.csproj",
+        "projectPath": "E:\\Mine\\Project\\Back End\\Myket.Clone\\MyKet\\MyKet.Data\\MyKet.Data.csproj",
         "packagesPath": "C:\\Users\\yaran\\.nuget\\packages\\",
-        "outputPath": "E:\\Mine\\Project\\Back End\\MyKet\\MyKet.Data\\obj\\",
+        "outputPath": "E:\\Mine\\Project\\Back End\\Myket.Clone\\MyKet\\MyKet.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yaran\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -80,14 +80,14 @@
         }
       }
     },
-    "E:\\Mine\\Project\\Back End\\MyKet\\MyKet.Server\\MyKet.Server.csproj": {
+    "E:\\Mine\\Project\\Back End\\Myket.Clone\\MyKet\\MyKet.Server\\MyKet.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Mine\\Project\\Back End\\MyKet\\MyKet.Server\\MyKet.Server.csproj",
+        "projectUniqueName": "E:\\Mine\\Project\\Back End\\Myket.Clone\\MyKet\\MyKet.Server\\MyKet.Server.csproj",
         "projectName": "MyKet.Server",
-        "projectPath": "E:\\Mine\\Project\\Back End\\MyKet\\MyKet.Server\\MyKet.Server.csproj",
+        "projectPath": "E:\\Mine\\Project\\Back End\\Myket.Clone\\MyKet\\MyKet.Server\\MyKet.Server.csproj",
         "packagesPath": "C:\\Users\\yaran\\.nuget\\packages\\",
-        "outputPath": "E:\\Mine\\Project\\Back End\\MyKet\\MyKet.Server\\obj\\",
+        "outputPath": "E:\\Mine\\Project\\Back End\\Myket.Clone\\MyKet\\MyKet.Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yaran\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -104,8 +104,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Mine\\Project\\Back End\\MyKet\\MyKet.Data\\MyKet.Data.csproj": {
-                "projectPath": "E:\\Mine\\Project\\Back End\\MyKet\\MyKet.Data\\MyKet.Data.csproj"
+              "E:\\Mine\\Project\\Back End\\Myket.Clone\\MyKet\\MyKet.Data\\MyKet.Data.csproj": {
+                "projectPath": "E:\\Mine\\Project\\Back End\\Myket.Clone\\MyKet\\MyKet.Data\\MyKet.Data.csproj"
               }
             }
           }
