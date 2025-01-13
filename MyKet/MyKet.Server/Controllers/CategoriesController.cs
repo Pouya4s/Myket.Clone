@@ -25,7 +25,8 @@ namespace MyKet.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Category>>> GetCategories()
         {
-            return await _context.Categories.ToListAsync();
+            var cats = await _context.Categories.Include(c => c.Apps).ToListAsync();
+            return cats;
         }
 
         // GET: api/Categories/5

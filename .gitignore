@@ -1,13 +1,16 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/FrontEnd/node_modules
+/FrontEnd/node_modules/
 /FrontEnd/.pnp
 /FrontEnd/.pnp.js
-/MyKet/**/bin
-/MyKet/.vs
-/MyKet/MyKet.Data/obj
-/MyKet/MyKet.Server/obj
+MyKet/**/bin/
+/MyKet/.vs/
+/MyKet/.vs/**
+MyKet/**/obj/
+MyKet/MyKet.Data/obj/
+MyKet/MyKet.Server/obj/
+
 # testing
 /FrontEnd/coverage
 
@@ -25,3 +28,4 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 node_modules
+
