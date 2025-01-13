@@ -22,6 +22,23 @@ namespace MyKet.Server
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("MyKet"));
             });
+
+	    #region Cors
+
+            builder.Services.AddCors(options => {
+
+                options.AddPolicy("All", policy => {
+                    policy.AllowAnyOrigin().WithMethods(
+                        HttpMethod.Get.Method,
+                        HttpMethod.Put.Method,
+                        HttpMethod.Post.Method,
+                        HttpMethod.Delete.Method);
+                    policy.AllowAnyHeader();
+                    policy.AllowAnyMethod();
+                });
+
+            });
+            #endregion
             
             var app = builder.Build();
 
