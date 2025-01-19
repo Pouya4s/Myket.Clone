@@ -38,7 +38,7 @@ function AdminCategorys() {
   const [Eparams,fillEForm]=useState({id:"",title:"",link:""});
 
   function setEdit(rowE){
-    
+
     changeEdit(true);
     fillEForm({
       id: rowE.children[0].innerText,
