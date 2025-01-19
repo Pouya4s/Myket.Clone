@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -25,7 +27,24 @@ namespace MyKet.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Category>>> GetCategories()
         {
-            var cats = await _context.Categories.Include(c => c.Apps).ToListAsync();
+            var cats = await _context.Categories.Include(c => c.Apps).Select(c => new Category()
+            {
+                Name = c.Name,
+                Id = c.Id,
+                Apps = c.Apps.Select(a => new App()
+                {
+                    Name = a.Name,
+                    Id = a.Id,
+                    CatchTitle = a.CatchTitle,
+                    Categories = null,
+                    Description = a.Description,
+                    DownloadsCount = a.DownloadsCount,
+                    Image = a.Image,
+                    IsGame = a.IsGame,
+                    SizeInMBs = a.SizeInMBs
+                }).ToList()
+            }).ToListAsync();
+
             return cats;
         }
 
