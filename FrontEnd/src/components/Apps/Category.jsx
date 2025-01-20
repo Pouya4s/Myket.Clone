@@ -15,7 +15,7 @@ function Category({category}) {
           category.apps.map((app)=>(
             !app.isGame?
             <div className="app w-[155px]">
-              <a className="flex flex-col py-2.5 px-1 rounded-lg appShadow" href={"Games/" + app.id}>
+              <a className="flex flex-col py-2.5 px-1 rounded-lg appShadow" href={"/Details?id=" + app.id}>
                 <img className="w-36 h-36 rounded-2xl object-cover" src={app.image} alt="AppImage" />
                 <h4 className="pt-1.5 h-[52px] font-light text-[#ddd] text-right LTR">{app.name}</h4>
                 <p className="text-[#a7a7a7] font-light text-xs">{app.catchTitle}</p>

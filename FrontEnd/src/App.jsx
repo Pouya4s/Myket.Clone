@@ -29,7 +29,8 @@ function App() {
                 <Route path='/Games' element={<Games/>}/>
                 
                 <Route path='/Apps' element={<Apps/>}/>
-                <Route path='/Apps/Details' element={<Details/>}/>
+                
+                <Route path='/Details' element={<Details/>}/>
                 
                 <Route path='/Movies' element={<Movies/>}/>
                 <Route path='/Developers' element={<Developers/>}/>

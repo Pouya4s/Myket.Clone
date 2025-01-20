@@ -18,7 +18,8 @@ namespace MyKet.Data.Entitites
         public string Description { get; set; }
         public string DownloadsCount { get; set; }
         public int SizeInMBs { get; set; }
-
+        public string DownloadLink { get; set; }
+        public List<string> Galery { get; set; }
 
         public List<Category> Categories { get; set; } = [];
         public bool IsGame { get; set; }
