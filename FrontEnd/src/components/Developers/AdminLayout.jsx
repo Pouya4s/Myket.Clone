@@ -7,7 +7,7 @@ function AdminLayout() {
     const path = useLocation().pathname;
     let lastSIndex = path.split("").lastIndexOf("/")+1;
     let page = path.slice(lastSIndex);
-    console.log(page);
+    // console.log(page);
     return (
       <div className="bg-[#212121]">
         <div className="container pt-[80px] pt-9 flex justify-between">
