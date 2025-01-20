@@ -38,7 +38,7 @@ function AdminCategorys() {
   const [Eparams,fillEForm]=useState({id:"",title:"",link:""});
 
   function setEdit(rowE){
-    
+
     changeEdit(true);
     fillEForm({
       id: rowE.children[0].innerText,
@@ -55,7 +55,9 @@ function AdminCategorys() {
   function handleDelete(rowD){
     
     cats=cats.filter((cat)=>{return cat.id!=Number(rowD.children[0].innerText)})
-    notEdit();
+    if(Number(rowD.children[0].innerText) == Eparams.id){
+      notEdit();
+    }
     rowD.remove();
   }
     return (
@@ -101,8 +103,8 @@ function AdminCategorys() {
                   <td>{cat.id}</td>
                   <td className="text-right">{cat.title}</td>
                   <td>{cat.link}</td>
-                  <td><a className="block w-fit m-auto p-1 hover:bg-[#ff7800] hover:text-[#181818] rounded-full" onClick={(e)=>{setEdit(e.target.parentNode.parentNode)}} href="#"><MdEdit className="pointer-events-none" size={25}/></a></td>
-                  <td><a className="block w-fit m-auto p-2 hover:bg-[#f00] hover:text-[#181818] rounded-full" onClick={(e)=>{handleDelete(e.target.parentNode.parentNode)}} href="#"><ImCross className="pointer-events-none" size={20}/></a></td>
+                  <td><span className="block w-fit m-auto p-1 hover:bg-[#ff7800] hover:text-[#181818] rounded-full cursor-pointer" onClick={(e)=>{setEdit(e.target.parentNode.parentNode)}}><MdEdit className="pointer-events-none" size={25}/></span></td>
+                  <td><span className="block w-fit m-auto p-2 hover:bg-[#f00] hover:text-[#181818] rounded-full cursor-pointer" onClick={(e)=>{handleDelete(e.target.parentNode.parentNode)}}><ImCross className="pointer-events-none" size={20}/></span></td>
                 </tr>
               ))}
             </tbody>
