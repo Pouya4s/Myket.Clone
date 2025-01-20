@@ -5,6 +5,7 @@
 /FrontEnd/.pnp
 /FrontEnd/.pnp.js
 MyKet/**/bin/
+/MyKet/.vs
 /MyKet/.vs/
 /MyKet/.vs/**
 /MyKet/**/obj/
