@@ -214,6 +214,32 @@ footer li a:hover{
 
 /* ------------- Details Page End ------------- */
 
+/* ------------- Admin Panel Page Start ------------- */
+
+.mytbl *:not(p):not(svg){
+  border: solid 1px #eee;
+  padding: 2px 10px;
+}
+
+.mygal:-moz-placeholder {
+  direction: rtl;
+  text-align: center;
+}
+.mygal:-ms-input-placeholder {
+  direction: rtl;
+  text-align: center;
+}
+.mygal::-webkit-input-placeholder {
+  direction: rtl;
+  text-align: center;
+}
+
+.trans{
+  transition: all linear 1s;
+}
+
+/* ------------- Admin Panel Page End ------------- */
+
 /* ------------- Vertical Slider Styles ------------- */
 
 .Vslider .slider{

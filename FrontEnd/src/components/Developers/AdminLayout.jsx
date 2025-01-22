@@ -5,9 +5,8 @@ import { Link, Outlet, useLocation } from 'react-router-dom';
 
 function AdminLayout() {
     const path = useLocation().pathname;
-    let lastSIndex = path.split("").lastIndexOf("/")+1;
-    let page = path.slice(lastSIndex);
-    // console.log(page);
+    let page = (path.split("/")[path.split("/").length-1]==="")?path.split("/")[path.split("/").length-2]:path.split("/")[path.split("/").length-1];
+    
     return (
       <div className="bg-[#212121]">
         <div className="container pt-[80px] pt-9 flex justify-between">
@@ -25,14 +24,14 @@ function AdminLayout() {
                     دسته بندی ها
                   </li>
                 </Link>
-                <Link to="/Developers/Admin/apps">
-                  <li className={page==="apps"?"p-2 py-3 my-1 bg-[#080808] cursor-default select-none rounded-md":"p-2 py-3 my-1 hover:bg-[#212121] cursor-pointer select-none rounded-md"}>
-                    برنامه ها
+                <Link to="/Developers/Admin/applications">
+                  <li className={page==="applications"?"p-2 py-3 my-1 bg-[#080808] cursor-default select-none rounded-md":"p-2 py-3 my-1 hover:bg-[#212121] cursor-pointer select-none rounded-md"}>
+                    اپلیکیشن ها
                   </li>
                 </Link>
-                <Link to="/Developers/Admin/games">
-                  <li className={page==="games"?"p-2 py-3 my-1 bg-[#080808] cursor-default select-none rounded-md":"p-2 py-3 my-1 hover:bg-[#212121] cursor-pointer select-none rounded-md"}>
-                    بازی ها
+                <Link to="/Developers/Admin/CatAppRel">
+                  <li className={page==="CatAppRel"?"p-2 py-3 my-1 bg-[#080808] cursor-default select-none rounded-md":"p-2 py-3 my-1 hover:bg-[#212121] cursor-pointer select-none rounded-md"}>
+                    ارتباط اپلیکیشن و دسته بندی
                   </li>
                 </Link>
               </ul>

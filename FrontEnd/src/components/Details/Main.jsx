@@ -13,13 +13,11 @@ function Main({props}) {
   const [parameters] = useSearchParams();
   const id = parameters.get('id');
   const [app, setApp] = useState();
-useEffect(()=>{
-    getApp(id);
-}, []);
-
-  console.log(app);
+  useEffect(()=>{
+      getApp(id);
+  });
   
-  let kollesh = (app==undefined)?<p>Loading...</p>:<section className="container flex pt-3 justify-between">
+  let kollesh = (app===undefined)?<p className='text-2xl p-8 container'>Loading...</p>:<section className="container flex pt-3 justify-between">
   {/* SideBar */}
   <div className="w-[29%] flex flex-col">
     <div className='flex flex-col bg-[#4f4f4f] rounded-lg p-4 mb-3'>
