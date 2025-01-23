@@ -5,11 +5,11 @@ import Rain from './Rain';
 
 function Main() {
     return (
-      <article className="pt-[78px] bg-[#292b2c]">
-        <div id="rainCard" className="relative overflow-hidden">
-          <img onLoad={(e)=>{Rain(e.target.parentElement)}} className="Starter absolute top-[90%] opacity-30" src={require("../../assets/Home/DevelopersSVG.png")} alt="AppImage" />
-
-          <div className="flex relative container text-center justify-start pb-10 z-10 pt-[70px]">
+      <article className="pt-[78px] bg-[#212121]">
+        <div id="rainCard" className="relative overflow-hidden bg-[#727272]">
+          <img onLoad={(e)=>{Rain(e.target.parentElement)}} className="Starter absolute top-[90%]" src={require("../../assets/Home/DevelopersSVG.png")} alt="AppImage" />
+          <div className='absolute bg-[rgba(0,0,0,.6)] w-full h-full left-0 top-0 z-10'></div>
+          <div className="flex relative container text-center justify-start pb-10 z-20 pt-[70px]">
             <div className="flex flex-col p-10 pt-5 pr-0 w-[55%] items-center">
               <div>
                 <h1 className="text-3xl font-bold pb-10">پنل توسعه دهندگان مایکت</h1>

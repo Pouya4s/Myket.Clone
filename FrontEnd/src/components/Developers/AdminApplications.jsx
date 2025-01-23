@@ -81,7 +81,7 @@ function AdminApplications() {
   function handleDelete(rowD){
 
     apps=apps.filter((app)=>{return app.id!==Number(rowD.children[0].innerText)})
-    if(Number(rowD.children[0].innerText) === id){
+    if(Number(rowD.children[0].innerText) === Number(id)){
       notEdit();
     }
     rowD.remove();

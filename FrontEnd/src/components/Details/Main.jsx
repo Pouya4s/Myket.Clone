@@ -17,7 +17,7 @@ function Main({props}) {
       getApp(id);
   });
   
-  let kollesh = (app===undefined)?<p className='text-2xl p-8 container'>Loading...</p>:<section className="container flex pt-3 justify-between">
+  let kollesh = (app===undefined)?<p className='text-2xl p-8 container'>Loading...</p>:(<section className="container flex pt-3 justify-between">
   {/* SideBar */}
   <div className="w-[29%] flex flex-col">
     <div className='flex flex-col bg-[#4f4f4f] rounded-lg p-4 mb-3'>
@@ -85,7 +85,7 @@ function Main({props}) {
       {app.description}
     </div>
   </div>
-</section>;
+</section>);
   return (
     <>
       <div id='black'></div>

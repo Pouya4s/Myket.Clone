@@ -15,6 +15,7 @@ import AdminApps from './components/Developers/AdminApplications';
 import AdminGames from './components/Developers/AdminCatAppRel';
 import AdminLayout from './components/Developers/AdminLayout';
 import Search from './components/Search/Main';
+import Category from './components/Category/Main';
 
 
 function App() {
@@ -29,21 +30,19 @@ function App() {
             
             <Route element={<Layout/>}>
                 <Route path='/Games' element={<Games/>}/>
-                
                 <Route path='/Apps' element={<Apps/>}/>
-                
-                <Route path='/Details' element={<Details/>}/>
-                
                 <Route path='/Movies' element={<Movies/>}/>
                 <Route path='/Developers' element={<Developers/>}/>
+                <Route path='/Details' element={<Details/>}/>
+                <Route path='/Category' element={<Category/>}/>
                 <Route element={<AdminLayout/>}>
                     <Route path='/Developers/Admin' element={<MainAdmin/>}/>
                     <Route path='/Developers/Admin/categorys' element={<AdminCategorys/>}/>
                     <Route path='/Developers/Admin/applications' element={<AdminApps/>}/>
                     <Route path='/Developers/Admin/CatAppRel' element={<AdminGames/>}/>
                 </Route>
+                <Route path="*" element={(<h1 className='text-center mt-5 text-4xl'>404 Not Found</h1>)}/>
             </Route>
-            <Route path="*" element={(<h1 className='text-center mt-5 text-4xl'>404 Not Found</h1>)}/>
       </Routes>
     </BrowserRouter>
   );

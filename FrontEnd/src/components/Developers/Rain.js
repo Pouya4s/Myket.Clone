@@ -12,15 +12,16 @@ export default function Rain(element){
         require('../../assets/Games/PrisonBreak.webp'),
     ];
 
-    let newIMG=setInterval(()=>{
+    let repeat=setInterval(()=>{
+        let newIMG=setTimeout(()=>{
         if(element!=="" && element!==undefined){
             let img=document.createElement("img");
             let Rangle=randInt(0,359);
-            let Rspeed=randInt(.2,.4);
+            let Rspeed=randInt(.2,.3);
             let speed=randInt(.3,1);
             img.src=imgArr[randInt(0,imgArr.length-1)];
             img.alt="AppIcone";
-            img.style.opacity=0.5;
+            // img.style.opacity=0.5;
             img.style.borderRadius=`8px`;
             img.style.position='absolute';
             img.style.width=`${randInt(50,130)}px`;
@@ -46,8 +47,10 @@ export default function Rain(element){
         }
         else{
             clearInterval(newIMG);
+            clearInterval(repeat);
         }
-    },randInt(500,5000))
+        },randInt(500,5000))
+    },2000)
 
 
     function randInt(start,end){
