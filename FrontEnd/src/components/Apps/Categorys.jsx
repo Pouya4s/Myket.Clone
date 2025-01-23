@@ -33,7 +33,6 @@ useEffect(() => {
   {
     let cats = await getJson('api/Categories');
     setCategories(cats);
-    console.log(cats);
   }
 }
 

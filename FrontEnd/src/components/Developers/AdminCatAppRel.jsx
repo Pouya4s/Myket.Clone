@@ -1,6 +1,5 @@
 // import '../../App.css';
-// import { getJson, postJson, deleteJson } from './fetch';
-
+ import { postJsonWithReturn } from '../../fetch';
 function AdminCatAppRel() {
 
   let fade=undefined;
@@ -9,8 +8,7 @@ function AdminCatAppRel() {
     let AID=document.getElementsByName("appID")[0].value;
     let CID=document.getElementsByName("catID")[0].value;
     if(AID!=="" && CID!==""){
-      
-      showMSG("set",true);
+      addToCategory(AID, CID);
     }
     else{
       alert("هر دو شناسه را وارد کنید!");
@@ -21,8 +19,7 @@ function AdminCatAppRel() {
     let AID=document.getElementsByName("appID")[0].value;
     let CID=document.getElementsByName("catID")[0].value;
     if(AID!=="" && CID!==""){
-      
-      showMSG("del",false);
+      removeFromCategory(AID, CID);
     }
     else{
       alert("هر دو شناسه را وارد کنید!");
@@ -78,6 +75,32 @@ function AdminCatAppRel() {
         <div id="MSG" className="h-[50px] mt-3 text-center text-2xl content-center rounded-md pointer-events-none select-none"></div>
       </div>
     );
+    async function addToCategory(appId, categoryId)
+    {
+      let obj= {
+        appId: appId,
+        categoryId: categoryId
+      };
+      let res = await postJsonWithReturn('api/Apps/AddToCategory/' + obj.appId + "/" + obj.categoryId, obj);
+      
+      
+      showMSG("set",res.isSuccess===true);
+
+      return res;
+    }
+    async function removeFromCategory(appId, categoryId)
+    {
+      let obj= {
+        appId: appId,
+        categoryId: categoryId
+      };
+      let res = await postJsonWithReturn('api/Apps/RemoveFromCategory/' + obj.appId + "/" + obj.categoryId, obj);
+      
+      showMSG("del",res.isSuccess===true);
+        
+        
+      return res;
+    }
 }
   
 export default AdminCatAppRel; 

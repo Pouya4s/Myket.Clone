@@ -99,10 +99,11 @@ namespace MyKet.Server.Controllers
 
             return NoContent();
         }
-        [HttpPost("AddToCategory")]
-        public async Task<ActionResult<App>> AddToCategory(int appId, int categoryId)
+        [HttpPost("AddToCategory/{appId}/{categoryId}")]
+        public async Task<ActionResult> AddToCategory(int appId, int categoryId)
         {
-            var app = await _context.Applications.FindAsync(appId);
+            var app = await _context.Applications
+                .Include(a => a.Categories).SingleOrDefaultAsync(a => a.Id == appId);
             var category = await _context.Categories.FindAsync(categoryId);
             if (app is null || category is null)
             {
@@ -110,10 +111,10 @@ namespace MyKet.Server.Controllers
             }
             app.Categories.Add(category);
             await _context.SaveChangesAsync();
-            return app;
+            return Ok(new {isSuccess = true});
         }
-        [HttpPost("RemoveFromCategory")]
-        public async Task<ActionResult<App>> RemoveFromCategory(int appId, int categoryId)
+        [HttpPost("RemoveFromCategory/{appId}/{categoryId}")]
+        public async Task<ActionResult> RemoveFromCategory(int appId, int categoryId)
         {
             var app = await _context.Applications
                 .Include(a => a.Categories).SingleOrDefaultAsync(a => a.Id == appId);
@@ -126,7 +127,8 @@ namespace MyKet.Server.Controllers
             if(app.Categories.Contains(category))
                 app.Categories.Remove(category);
             await _context.SaveChangesAsync();
-            return app;
+            
+            return Ok(new { isSuccess = true });
         }
         private bool AppExists(int id)
         {
