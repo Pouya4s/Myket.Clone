@@ -114,7 +114,7 @@ function AdminApplications() {
                       <label className="px-3">تعداد دانلود</label>
                     </td>
                     <td>
-                      <input name="downloadsCount" type="number" value={0} onChange={(e)=>{}} className="rounded px-2 py-1 text-[#222] w-full"/>
+                      <input name="downloadsCount" type="number" className="rounded px-2 py-1 text-[#222] w-full"/>
                     </td>
                     <td>
                       <label className="px-3">اندازه (mb)</label>
