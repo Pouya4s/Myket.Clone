@@ -10,7 +10,7 @@ function Category({category}) {
     <div className="containerCat py-5 text-sm flex flex-col">
       <div className="flex flex-row justify-between font-bold mb-6">
         <h2 className="text-xl">{category.name}</h2>
-        <a className="text-[#07f] p-1 hover:bg-[#c9f0ff6b] hover:text-white" href={"Category/" + category.id}>همه <IoIosArrowBack className="inline" size={20} /></a>
+        <a className="text-[#07f] p-1 hover:bg-[#c9f0ff6b] hover:text-white" href={"Category?id=" + category.id}>همه <IoIosArrowBack className="inline" size={20} /></a>
       </div>
       <div className="flex flex-wrap gap-2 min-w-[1133px]">
         {

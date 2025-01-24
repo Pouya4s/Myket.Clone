@@ -1,32 +1,24 @@
 // import '../../App.css';
 // import { getJson, postJson, deleteJson } from './fetch';
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { getJson } from "../../fetch";
+import { useSearchParams } from "react-router-dom";
 // import { useSearchParams } from "react-router-dom";
 
 function Category() {
 
+  const [parameters] = useSearchParams();
+  const id = parameters.get('id');
+  const [category, setCategory] = useState();
+  useEffect(()=>{
+    getCategory(id);
+  });
   // const [params]=useSearchParams();
   // const [catID]=useState(params.get("id")!==undefined?params.get("id"):"");
-  const [catName]=useState("استراتژی");
+  const [catName, setCatname]= useState();
 
-  let apps=[
-    {id:1,title:"پسرخوانده",catchTitle:"نبرد مافیا و شهروند",image:require("../../assets/Games/StepBoy.webp")},
-    {id:2,title:"کلش آف کلنز",catchTitle:"بازی استراتژی محبوب",image:require("../../assets/Games/ClashofClans.webp")},
-    {id:3,title:"پسرخوانده",catchTitle:"نبرد مافیا و شهروند",image:require("../../assets/Games/StepBoy.webp")},
-    {id:4,title:"کلش آف کلنز",catchTitle:"بازی استراتژی محبوب",image:require("../../assets/Games/ClashofClans.webp")},
-    {id:5,title:"پسرخوانده",catchTitle:"نبرد مافیا و شهروند",image:require("../../assets/Games/StepBoy.webp")},
-    {id:6,title:"کلش آف کلنز",catchTitle:"بازی استراتژی محبوب",image:require("../../assets/Games/ClashofClans.webp")},
-    {id:7,title:"پسرخوانده",catchTitle:"نبرد مافیا و شهروند",image:require("../../assets/Games/StepBoy.webp")},
-    {id:8,title:"کلش آف کلنز",catchTitle:"بازی استراتژی محبوب",image:require("../../assets/Games/ClashofClans.webp")},
-    {id:9,title:"پسرخوانده",catchTitle:"نبرد مافیا و شهروند",image:require("../../assets/Games/StepBoy.webp")},
-    {id:10,title:"کلش آف کلنز",catchTitle:"بازی استراتژی محبوب",image:require("../../assets/Games/ClashofClans.webp")},
-    {id:11,title:"پسرخوانده",catchTitle:"نبرد مافیا و شهروند",image:require("../../assets/Games/StepBoy.webp")},
-    {id:12,title:"کلش آف کلنز",catchTitle:"بازی استراتژی محبوب",image:require("../../assets/Games/ClashofClans.webp")},
-    {id:13,title:"پسرخوانده",catchTitle:"نبرد مافیا و شهروند",image:require("../../assets/Games/StepBoy.webp")},
-    {id:14,title:"کلش آف کلنز",catchTitle:"بازی استراتژی محبوب",image:require("../../assets/Games/ClashofClans.webp")},
-    {id:15,title:"کلش آف کلنز",catchTitle:"بازی استراتژی محبوب",image:require("../../assets/Games/ClashofClans.webp")},
-  ]
+  let apps= (category===undefined)? []: category.apps;
 
   return (
     <>
@@ -40,7 +32,7 @@ function Category() {
                   apps.map((app)=>(
                     <a href={'/details?id='+app.id} className="block w-[13%] rounded-md hover:shadow-md shadow-black hover:bg-[#242629] p-2 transition-all duration-300 overflow-hidden h-fit">
                       <img className="pb-3 rounded-3xl" src={app.image} alt="appImage" />
-                      <h2 className="text-sm">{app.title}</h2>
+                      <h2 className="text-sm">{app.name}</h2>
                       <p className="text-xs text-[#a7a7a7]">{app.catchTitle}</p>
                     </a>
                   ))
@@ -54,6 +46,12 @@ function Category() {
       </article>
     </>
   );
+  
+  async function getCategory(id){
+    let cat = await getJson("api/Categories/" + id);
+    setCategory(cat);
+    setCatname(cat.name);
+  }
 }
 
 export default Category;

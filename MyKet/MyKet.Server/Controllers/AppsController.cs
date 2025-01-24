@@ -41,6 +41,20 @@ namespace MyKet.Server.Controllers
 
             return app;
         }
+        [HttpGet("SearchApp/{searchText}")]
+        public async Task<ActionResult<IEnumerable<App>>> SearchApp(string searchText)
+        {
+            var apps = await _context.Applications.Include(a => a.Categories)
+                .Where(a => a.Name.Contains(searchText) || a.CatchTitle.Contains(searchText))
+                .ToListAsync();
+
+            if (apps == null)
+            {
+                return NotFound();
+            }
+
+            return apps;
+        }
 
         // PUT: api/Apps/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754

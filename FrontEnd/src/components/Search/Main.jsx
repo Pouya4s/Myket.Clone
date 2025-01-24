@@ -1,35 +1,29 @@
 // import '../../App.css';
 // import { getJson, postJson, deleteJson } from './fetch';
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./Header";
 import { FaSearch } from "react-icons/fa";
 import { useSearchParams } from "react-router-dom";
+import { getJson } from "../../fetch";
 
 function Search() {
 
   const [params]=useSearchParams();
   const [isSearch]=useState(Boolean(params.get('S')));
   const [searchVal]=useState(params.get("S")!==undefined?params.get("S"):"");
+  const [apps, setApps] = useState();
+  useEffect(()=>{
+    getApps(searchVal);
+  }, [searchVal])
 
-  let apps=[
-    {id:1,title:"فیلیمو",category:"کاربردی",image:require("../../assets/Apps/Filimo.webp")},
-    {id:2,title:"کلش آف کلنز",category:"استریتژی",image:require("../../assets/Games/ClashofClans.webp")},
-    {id:3,title:"فیلیمو",category:"کاربردی",image:require("../../assets/Apps/Filimo.webp")},
-    {id:4,title:"کلش آف کلنز",category:"استریتژی",image:require("../../assets/Games/ClashofClans.webp")},
-    {id:5,title:"فیلیمو",category:"کاربردی",image:require("../../assets/Apps/Filimo.webp")},
-    {id:6,title:"کلش آف کلنز",category:"استریتژی",image:require("../../assets/Games/ClashofClans.webp")},
-    {id:7,title:"فیلیمو",category:"کاربردی",image:require("../../assets/Apps/Filimo.webp")},
-    {id:8,title:"کلش آف کلنز",category:"استریتژی",image:require("../../assets/Games/ClashofClans.webp")},
-    {id:9,title:"فیلیمو",category:"کاربردی",image:require("../../assets/Apps/Filimo.webp")},
-    {id:10,title:"کلش آف کلنز",category:"استریتژی",image:require("../../assets/Games/ClashofClans.webp")},
-    {id:11,title:"فیلیمو",category:"کاربردی",image:require("../../assets/Apps/Filimo.webp")},
-    {id:12,title:"کلش آف کلنز",category:"استریتژی",image:require("../../assets/Games/ClashofClans.webp")},
-    {id:13,title:"فیلیمو",category:"کاربردی",image:require("../../assets/Apps/Filimo.webp")},
-    {id:14,title:"کلش آف کلنز",category:"استریتژی",image:require("../../assets/Games/ClashofClans.webp")},
-    {id:15,title:"کلش آف کلنز",category:"استریتژی",image:require("../../assets/Games/ClashofClans.webp")},
-  ]
-
+  let output = (apps===undefined)?<p>در حال بارگذاری...</p>:apps.map((app)=>(
+    <a key={app.id} href={'/details?id='+app.id} className="block w-[13%] rounded-md hover:shadow-md shadow-black hover:bg-[#242629] p-2 transition-all duration-300 overflow-hidden h-fit">
+      <img className="pb-3 rounded-3xl" src={app.image} alt="appImage" />
+      <h2 className="text-sm">{app.name}</h2>
+      <p className="text-xs text-[#a7a7a7]">{app.catchTitle}</p>
+    </a>
+  ));
   return (
     <>
       <Header/>
@@ -39,13 +33,7 @@ function Search() {
             <>
               <h1 className="container my-10 text-xl font-bold">نتیجه جستجو برای : <span>{searchVal}</span></h1>
               <div className="flex flex-wrap gap-2 container">
-                {apps.map((app)=>(
-                  <a href={'/details?id='+app.id} className="block w-[13%] rounded-md hover:shadow-md shadow-black hover:bg-[#242629] p-2 transition-all duration-300 overflow-hidden h-fit">
-                    <img className="pb-3 rounded-3xl" src={app.image} alt="appImage" />
-                    <h2 className="text-sm">{app.title}</h2>
-                    <p className="text-xs text-[#a7a7a7]">{app.category}</p>
-                  </a>
-                ))}
+                {output}
               </div>
             </>
           ):(
@@ -58,6 +46,11 @@ function Search() {
       </article>
     </>
   );
+  async function getApps(s){
+        let app = await getJson("api/Apps/SearchApp/" + s);
+        console.log(app);
+        setApps(app);
+  }
 }
 
 export default Search;

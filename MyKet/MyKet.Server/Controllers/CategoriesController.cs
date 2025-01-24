@@ -31,7 +31,7 @@ namespace MyKet.Server.Controllers
             {
                 Name = c.Name,
                 Id = c.Id,
-                Apps = c.Apps.Select(a => new App()
+                Apps = c.Apps.Take(7).Select(a => new App()
                 {
                     Name = a.Name,
                     Id = a.Id,
@@ -52,7 +52,8 @@ namespace MyKet.Server.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Category>> GetCategory(int id)
         {
-            var category = await _context.Categories.FindAsync(id);
+            var category = await _context.Categories.Include(c => c.Apps).
+                SingleOrDefaultAsync(c => c.Id == id);
 
             if (category == null)
             {
